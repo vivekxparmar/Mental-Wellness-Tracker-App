@@ -1,9 +1,8 @@
+// server/server.js
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
-const path = require('path');
-
 const authRoutes = require('./routes/auth');
 const moodRoutes = require('./routes/mood');
 const journalRoutes = require('./routes/journal');
@@ -14,35 +13,24 @@ const app = express();
 
 // CORS configuration
 const corsOptions = {
-  origin: 'https://mental-wellness-tracker-app.vercel.app',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true,
+  origin: 'https://mental-wellness-tracker-app.vercel.app', // Frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],  // Methods to allow
+  credentials: true,  // Allows cookies to be sent (if needed)
 };
 
+// Apply CORS middleware
 app.use(cors(corsOptions));
-app.use(express.json());
 
-// API routes
+// Middleware
+app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/mood', moodRoutes);
 app.use('/api/journal', journalRoutes);
 
-// Dev route for quick check
-if (process.env.NODE_ENV !== 'production') {
-  app.get('/', (req, res) => {
-    res.send('Mental Wellness Tracker API is running 🚀');
-  });
-}
-
-// Serve Vite frontend in production
-if (process.env.NODE_ENV === 'production') {
-  const distPath = path.join(__dirname, 'client', 'dist');
-  app.use(express.static(distPath));
-
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(distPath, 'index.html'));
-  });
-}
+// Routes
+app.get('/', (req, res) => {
+  res.send('Mental Wellness Tracker API is running 🚀');
+});
 
 // MongoDB Connection
 mongoose
