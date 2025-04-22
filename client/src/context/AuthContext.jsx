@@ -1,10 +1,8 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
-const dotenv = require('dotenv');
 
 const AuthContext = createContext();
-dotenv.config();
-const API = process.env.REACT_APP_API_BASE_URL;
+const API = import.meta.env.REACT_APP_API_BASE_URL;
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
