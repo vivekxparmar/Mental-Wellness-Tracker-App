@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { useAuth } from "../context/AuthContext"; // ✅ Import context
-const API = "https://mental-wellness-tracker-app-1.onrender.com";
+const API = "https://mental-wellness-tracker-app.onrender.com";
 
 const Login = () => {
   const navigate = useNavigate();

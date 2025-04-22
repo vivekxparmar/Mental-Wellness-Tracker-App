@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaCheck, FaArrowRight } from "react-icons/fa";
 import {toast} from "react-hot-toast";
 import axios from 'axios';
-const API = "https://mental-wellness-tracker-app-1.onrender.com";
+const API = "https://mental-wellness-tracker-app.onrender.com";
 
 const moods = [
   { emoji: "😀", label: "Happy", color: "from-yellow-300 to-yellow-400" },
