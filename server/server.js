@@ -3,6 +3,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const path = require('path');  // Add this to serve static files
+
 const authRoutes = require('./routes/auth');
 const moodRoutes = require('./routes/mood');
 const journalRoutes = require('./routes/journal');
@@ -26,6 +28,16 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/mood', moodRoutes);
 app.use('/api/journal', journalRoutes);
+
+// Serve static files (Vite dist folder) in production
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, 'client', 'dist')));  // Path to dist folder
+
+  // All routes should return the index.html file for React Router to handle
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'dist', 'index.html'));
+  });
+}
 
 // Routes
 app.get('/', (req, res) => {
