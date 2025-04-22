@@ -7,21 +7,27 @@ const authRoutes = require('./routes/auth');
 const moodRoutes = require('./routes/mood');
 const journalRoutes = require('./routes/journal');
 
-
-
 dotenv.config();
 
 const app = express();
 
+// CORS configuration
+const corsOptions = {
+  origin: 'https://mental-wellness-tracker-app-1.onrender.com', // Frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],  // Methods to allow
+  credentials: true,  // Allows cookies to be sent (if needed)
+};
+
+// Apply CORS middleware
+app.use(cors(corsOptions));
+
 // Middleware
-app.use(cors());
 app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/mood', moodRoutes);
 app.use('/api/journal', journalRoutes);
 
-
-// Routes (we’ll create these files later)
+// Routes
 app.get('/', (req, res) => {
   res.send('Mental Wellness Tracker API is running 🚀');
 });
