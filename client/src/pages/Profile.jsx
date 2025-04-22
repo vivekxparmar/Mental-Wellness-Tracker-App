@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 import { motion } from "framer-motion";
-const API = process.env.REACT_APP_API_BASE_URL;
+const API = "https://mental-wellness-tracker-app-1.onrender.com";
 
 const Profile = () => {
   const [user, setUser] = useState(null);
