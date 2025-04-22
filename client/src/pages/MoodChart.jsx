@@ -20,7 +20,7 @@ import "chartjs-adapter-date-fns";
 import { FiActivity, FiTrendingUp, FiTrendingDown } from "react-icons/fi";
 import { FaRegSmile, FaRegMeh, FaRegFrown } from "react-icons/fa";
 import { RiLoader4Line } from "react-icons/ri";
-const API = import.meta.env.REACT_APP_API_BASE_URL;
+const API = process.env.REACT_APP_API_BASE_URL;
 
 ChartJS.register(
   LineElement,

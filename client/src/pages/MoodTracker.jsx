@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaCheck, FaArrowRight } from "react-icons/fa";
 import {toast} from "react-hot-toast";
 import axios from 'axios';
-const API = import.meta.env.REACT_APP_API_BASE_URL;
+const API = process.env.REACT_APP_API_BASE_URL;
 
 const moods = [
   { emoji: "😀", label: "Happy", color: "from-yellow-300 to-yellow-400" },

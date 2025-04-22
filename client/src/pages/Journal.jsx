@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaPenFancy, FaSpinner, FaRegSmile, FaRegFrown, FaRegMeh } from "react-icons/fa";
 import { RiQuillPenLine } from "react-icons/ri";
 import {toast } from "react-hot-toast";
-const API = import.meta.env.REACT_APP_API_BASE_URL;
+const API = process.env.REACT_APP_API_BASE_URL;
 
 const Journal = () => {
   const { token } = useAuth();
