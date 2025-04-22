@@ -4,6 +4,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaCheck, FaArrowRight } from "react-icons/fa";
 import {toast} from "react-hot-toast";
 import axios from 'axios';
+const dotenv = require('dotenv');
+dotenv.config();
+const API = process.env.REACT_APP_API_BASE_URL;
 
 const moods = [
   { emoji: "😀", label: "Happy", color: "from-yellow-300 to-yellow-400" },
@@ -52,7 +55,7 @@ const MoodTracker = () => {
     
     try {
       // Make API call to backend
-      const response = await axios.post('/api/mood', { mood: selectedMood }, {
+      const response = await axios.post(`${API}/api/mood`, { mood: selectedMood }, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`, // Assuming you're using token-based auth
         },

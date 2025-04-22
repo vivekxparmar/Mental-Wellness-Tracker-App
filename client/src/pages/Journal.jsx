@@ -5,6 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaPenFancy, FaSpinner, FaRegSmile, FaRegFrown, FaRegMeh } from "react-icons/fa";
 import { RiQuillPenLine } from "react-icons/ri";
 import {toast } from "react-hot-toast";
+const dotenv = require('dotenv');
+dotenv.config();
+const API = process.env.REACT_APP_API_BASE_URL;
 
 const Journal = () => {
   const { token } = useAuth();
@@ -20,7 +23,7 @@ const Journal = () => {
     const submit = toast.loading("Submitting Journal...");
     try {
       const res = await axios.post(
-        "/api/journal",
+        `${API}/api/journal`,
         { entry: text }, // Make sure this matches the backend key `entry`
         { headers: { Authorization: `Bearer ${token}` } }
       );

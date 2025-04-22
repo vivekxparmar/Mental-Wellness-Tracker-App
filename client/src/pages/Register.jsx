@@ -2,13 +2,16 @@ import AuthForm from "../components/AuthForm";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import {toast} from "react-hot-toast";
+const dotenv = require('dotenv');
+dotenv.config();
+const API = process.env.REACT_APP_API_BASE_URL;
 
 const Register = () => {
   const navigate = useNavigate();
 
   const handleRegister = async (data) => {
     try {
-      await axios.post("/api/auth/register", data);
+      await axios.post(`${API}/api/auth/register`, data);
       toast.success("Registration successful");
       navigate("/login");
     } catch (err) {

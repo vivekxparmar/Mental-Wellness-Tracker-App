@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { useAuth } from "../context/AuthContext"; // ✅ Import context
+const dotenv = require('dotenv');
+dotenv.config();
+const API = process.env.REACT_APP_API_BASE_URL;
 
 const Login = () => {
   const navigate = useNavigate();
@@ -10,7 +13,7 @@ const Login = () => {
 
   const handleLogin = async (data) => {
     try {
-      const res = await axios.post("/api/auth/login", data);
+      const res = await axios.post(`${API}/api/auth/login`, data);
       const token = res.data.token;
 
       await login(token); // ✅ AuthContext will save token + fetch profile

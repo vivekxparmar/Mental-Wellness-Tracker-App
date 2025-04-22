@@ -20,6 +20,9 @@ import "chartjs-adapter-date-fns";
 import { FiActivity, FiTrendingUp, FiTrendingDown } from "react-icons/fi";
 import { FaRegSmile, FaRegMeh, FaRegFrown } from "react-icons/fa";
 import { RiLoader4Line } from "react-icons/ri";
+const dotenv = require('dotenv');
+dotenv.config();
+const API = process.env.REACT_APP_API_BASE_URL;
 
 ChartJS.register(
   LineElement,
@@ -79,7 +82,7 @@ const MoodChart = () => {
       let newStats = {};
 
       if (activeTab === "today") {
-        res = await axios.get("/api/mood/analytics/today", {
+        res = await axios.get(`${API}/api/mood/analytics/today`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -108,7 +111,7 @@ const MoodChart = () => {
               : null,
         };
       } if (activeTab === "week") {
-        res = await axios.get("/api/mood/analytics/week", {
+        res = await axios.get(`${API}/api/mood/analytics/week`, {
           headers: { Authorization: `Bearer ${token}` },
         });
       
@@ -140,7 +143,7 @@ const MoodChart = () => {
         };
       }
        else if (activeTab === "month") {
-        res = await axios.get("/api/mood/analytics/month", {
+        res = await axios.get(`${API}/api/mood/analytics/month`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 

@@ -1,7 +1,10 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
+const dotenv = require('dotenv');
 
 const AuthContext = createContext();
+dotenv.config();
+const API = process.env.REACT_APP_API_BASE_URL;
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -11,7 +14,7 @@ export const AuthProvider = ({ children }) => {
     const fetchProfile = async () => {
       if (!token) return;
       try {
-        const res = await axios.get("/api/auth/profile", {
+        const res = await axios.get(`${API}/api/auth/profile`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUser(res.data);
@@ -28,7 +31,7 @@ export const AuthProvider = ({ children }) => {
     setToken(jwt);
   
     try {
-      const res = await axios.get("/api/auth/profile", {
+      const res = await axios.get(`${API}/api/auth/profile`, {
         headers: { Authorization: `Bearer ${jwt}` },
       });
       setUser(res.data);

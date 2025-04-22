@@ -3,6 +3,9 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 import { motion } from "framer-motion";
+const dotenv = require('dotenv');
+dotenv.config();
+const API = process.env.REACT_APP_API_BASE_URL;
 
 const Profile = () => {
   const [user, setUser] = useState(null);
@@ -10,7 +13,7 @@ const Profile = () => {
 
   const fetchUser = async () => {
     try {
-      const res = await axios.get("/api/auth/profile", {
+      const res = await axios.get(`${API}/api/auth/profile`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
