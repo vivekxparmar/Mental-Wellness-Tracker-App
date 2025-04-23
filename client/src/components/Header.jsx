@@ -226,6 +226,9 @@ const Header = () => {
                 </>
               ) : (
                 <>
+                  <Link to="/dashboard" onClick={() => setMenuOpen(false)}>
+                    Dashboard
+                  </Link>
                   <p className="text-sm">Hi, {user.username}</p>
                   <button
                     onClick={() => {
