@@ -483,7 +483,7 @@ const MoodChart = () => {
             <>
               <Line ref={chartRef} data={chartData} options={chartOptions} />
               {/* Interactive elements overlay */}
-              <div className="absolute top-4 right-4 flex gap-2">
+              <div className="absolute top-0 right-0 flex gap-2">
                 {/* <button
                   className="p-2 rounded-lg bg-white/80 backdrop-blur-sm border border-white/30 shadow-sm hover:bg-gray-50 transition"
                   onClick={() => chartRef.current.resetZoom()}
