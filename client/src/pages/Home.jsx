@@ -43,8 +43,8 @@ const Home = () => {
         {/* Main content container with premium glass effect */}
         <motion.div
           className="relative z-10 w-full max-w-6xl backdrop-blur-xl bg-white/40 rounded-2xl border border-white/30 shadow-2xl shadow-teal-400/20 p-12 sm:p-16 overflow-hidden"
-          initial={isMobile ? {} :{ opacity: 0, scale: 0.95 }}
-          animate={isMobile ? {} :{ opacity: 1, scale: 1 }}
+          initial={isMobile ? {} : { opacity: 0, scale: 0.95 }}
+          animate={isMobile ? {} : { opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           {/* Subtle animated border */}
@@ -166,38 +166,19 @@ const Home = () => {
                 </div>
               </a>
             </motion.div>
-
-            {/* Trust indicators */}
-            {/* <motion.div
-              className="mt-16 opacity-80"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 0.8 }}
-              transition={{ delay: 1 }}
-            >
-              <p className="text-sm text-gray-500 mb-3">TRUSTED BY TEAMS AT</p>
-              <div className="flex flex-wrap justify-center gap-6 items-center">
-                {["Google", "Apple", "Spotify", "Netflix", "Amazon"].map(
-                  (company, index) => (
-                    <motion.div
-                      key={index}
-                      className="text-lg font-medium text-gray-600 opacity-70 hover:opacity-100 transition-opacity"
-                      whileHover={{ y: -2 }}
-                    >
-                      {company}
-                    </motion.div>
-                  )
-                )}
-              </div>
-            </motion.div> */}
           </div>
         </motion.div>
 
         {/* Floating meditation illustration */}
         <motion.div
           className="absolute bottom-10 right-10 w-24 h-24 hidden lg:block"
-          animate={isMobile ? {} : {
-            y: [0, -15, 0],
-          }}
+          animate={
+            isMobile
+              ? {}
+              : {
+                  y: [0, -15, 0],
+                }
+          }
           transition={{
             duration: 8,
             repeat: Infinity,
@@ -210,26 +191,13 @@ const Home = () => {
             className="w-full h-full object-contain opacity-90"
           />
         </motion.div>
-
-        {/* Scroll indicator */}
-        {/* <motion.div
-          className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <p className="text-xs text-gray-500 mb-2">Scroll to explore</p>
-          <div className="w-4 h-8 border-2 border-gray-400 rounded-full">
-            <motion.div
-              className="w-1 h-2 bg-gray-500 mx-auto mt-1 rounded-full"
-              animate={{ y: [0, 4] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-            />
-          </div>
-        </motion.div> */}
       </section>
 
       {/* Premium Features Section */}
-      <section id="features" className="relative py-28 px-6 md:px-12 lg:px-20 overflow-hidden">
+      <section
+        id="features"
+        className="relative py-28 px-6 md:px-12 lg:px-20 overflow-hidden"
+      >
         {/* Background elements */}
         <div className="absolute inset-0 overflow-hidden z-0">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-indigo-50 via-teal-50 to-purple-50 opacity-60"></div>
@@ -238,10 +206,14 @@ const Home = () => {
           {/* Floating decorative elements */}
           <motion.div
             className="absolute top-1/4 left-10 w-48 h-48 rounded-full bg-teal-400/10 blur-3xl"
-            animate={isMobile ? {} : {
-              x: [0, 40, 0],
-              y: [0, 30, 0],
-            }}
+            animate={
+              isMobile
+                ? {}
+                : {
+                    x: [0, 40, 0],
+                    y: [0, 30, 0],
+                  }
+            }
             transition={{
               duration: 20,
               repeat: Infinity,
@@ -384,42 +356,16 @@ const Home = () => {
           ))}
         </div>
 
-        {/* Additional CTA */}
-        {/* <motion.div
-          className="mt-20 text-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-        >
-          <Link
-            to="/all-features"
-            className="inline-flex items-center px-8 py-4 bg-white/90 backdrop-blur-md border border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition-all group"
-          >
-            <span className="text-lg font-semibold text-gray-800 group-hover:text-teal-600 transition-colors">
-              Explore All Features
-            </span>
-            <motion.span
-              className="ml-2 text-xl"
-              animate={{ x: [0, 4, 0] }}
-              transition={{
-                repeat: Infinity,
-                repeatType: "reverse",
-                duration: 2,
-                delay: 1,
-              }}
-            >
-              →
-            </motion.span>
-          </Link>
-        </motion.div> */}
-
         {/* Floating decorative elements */}
         <motion.div
           className="absolute bottom-20 right-20 hidden lg:block"
-          animate={isMobile ? {} : {
-            y: [0, -20, 0],
-          }}
+          animate={
+            isMobile
+              ? {}
+              : {
+                  y: [0, -20, 0],
+                }
+          }
           transition={{
             duration: 8,
             repeat: Infinity,
@@ -440,10 +386,14 @@ const Home = () => {
           {/* Floating gradient blobs */}
           <motion.div
             className="absolute top-1/3 left-1/4 w-64 h-64 rounded-full bg-teal-400/10 blur-3xl"
-            animate={isMobile ? {} : {
-              scale: [1, 1.1, 1],
-              opacity: [0.8, 1, 0.8],
-            }}
+            animate={
+              isMobile
+                ? {}
+                : {
+                    scale: [1, 1.1, 1],
+                    opacity: [0.8, 1, 0.8],
+                  }
+            }
             transition={{
               duration: 12,
               repeat: Infinity,
@@ -452,10 +402,14 @@ const Home = () => {
           />
           <motion.div
             className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-purple-400/10 blur-3xl"
-            animate={isMobile ? {} : {
-              x: [0, 20, 0],
-              y: [0, 30, 0],
-            }}
+            animate={
+              isMobile
+                ? {}
+                : {
+                    x: [0, 20, 0],
+                    y: [0, 30, 0],
+                  }
+            }
             transition={{
               duration: 15,
               repeat: Infinity,
@@ -556,55 +510,19 @@ const Home = () => {
                 </motion.div>
               ))}
             </div>
-
-            {/* CTA */}
-            {/* <motion.div
-              className="flex flex-col sm:flex-row justify-center gap-4"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.6 }}
-            >
-              <Link
-                to="/how-it-works"
-                className="relative overflow-hidden group px-8 py-4 rounded-xl"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-teal-500 to-teal-600 rounded-xl shadow-lg group-hover:from-teal-600 group-hover:to-teal-700 transition-all duration-500"></div>
-                <div className="relative z-10 flex items-center justify-center text-white font-semibold">
-                  <span>See How It Works</span>
-                  <motion.span
-                    className="ml-2 inline-block"
-                    animate={{ x: [0, 4, 0] }}
-                    transition={{
-                      repeat: Infinity,
-                      repeatType: "reverse",
-                      duration: 2,
-                      delay: 1,
-                    }}
-                  >
-                    →
-                  </motion.span>
-                </div>
-              </Link> 
-
-              <Link
-                to="/testimonials"
-                className="relative overflow-hidden group px-8 py-4 rounded-xl"
-              >
-                <div className="absolute inset-0 bg-white/90 backdrop-blur-sm rounded-xl border border-gray-200 group-hover:bg-white transition-all duration-300"></div>
-                <div className="relative z-10 flex items-center justify-center text-gray-800 font-medium">
-                  <span>Hear From Users</span>
-                </div>
-              </Link>
-            </motion.div> */}
           </div>
         </motion.div>
 
         {/* Floating decoration */}
         <motion.div
           className="absolute bottom-20 left-20 hidden lg:block"
-          animate={isMobile ? {} : {
-            y: [0, -20, 0],
-          }}
+          animate={
+            isMobile
+              ? {}
+              : {
+                  y: [0, -20, 0],
+                }
+          }
           transition={{
             duration: 8,
             repeat: Infinity,
@@ -704,7 +622,7 @@ const Home = () => {
             <motion.div
               key={idx}
               className="group relative h-full"
-              initial={isMobile ? {} :{ opacity: 0, y: 50 }}
+              initial={isMobile ? {} : { opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
@@ -763,7 +681,7 @@ const Home = () => {
         {/* Testimonial */}
         <motion.div
           className="relative z-10 max-w-4xl mx-auto mt-20 p-8 bg-white/80 backdrop-blur-sm rounded-2xl border border-white/30 shadow-lg"
-          initial={isMobile ? {} :{ opacity: 0 }}
+          initial={isMobile ? {} : { opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
@@ -789,9 +707,13 @@ const Home = () => {
         {/* Floating decoration */}
         <motion.div
           className="absolute bottom-20 left-20 hidden lg:block"
-          animate={isMobile ? {} :{
-            y: [0, -20, 0],
-          }}
+          animate={
+            isMobile
+              ? {}
+              : {
+                  y: [0, -20, 0],
+                }
+          }
           transition={{
             duration: 8,
             repeat: Infinity,
@@ -811,10 +733,14 @@ const Home = () => {
           {/* Floating gradient blobs */}
           <motion.div
             className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-teal-400/10 blur-3xl"
-            animate={isMobile ? {} :{
-              scale: [1, 1.2, 1],
-              opacity: [0.8, 1, 0.8],
-            }}
+            animate={
+              isMobile
+                ? {}
+                : {
+                    scale: [1, 1.2, 1],
+                    opacity: [0.8, 1, 0.8],
+                  }
+            }
             transition={{
               duration: 15,
               repeat: Infinity,
@@ -823,10 +749,14 @@ const Home = () => {
           />
           <motion.div
             className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-blue-400/10 blur-3xl"
-            animate={isMobile ? {} :{
-              x: [0, 30, 0],
-              y: [0, 20, 0],
-            }}
+            animate={
+              isMobile
+                ? {}
+                : {
+                    x: [0, 30, 0],
+                    y: [0, 20, 0],
+                  }
+            }
             transition={{
               duration: 20,
               repeat: Infinity,
@@ -839,7 +769,7 @@ const Home = () => {
         {/* Section header */}
         <motion.div
           className="relative z-10 max-w-4xl mx-auto text-center mb-16"
-          initial={isMobile ? {} :{ opacity: 0, y: -30 }}
+          initial={isMobile ? {} : { opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
@@ -910,7 +840,7 @@ const Home = () => {
             <motion.div
               key={i}
               className="group relative h-full"
-              initial={isMobile ? {} :{ opacity: 0, y: 50 }}
+              initial={isMobile ? {} : { opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
@@ -968,42 +898,16 @@ const Home = () => {
           ))}
         </div>
 
-        {/* CTA */}
-        {/* <motion.div
-          className="mt-20 text-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-        >
-          <Link
-            to="/join"
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-teal-600 to-blue-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all group"
-          >
-            <span className="relative inline-block group-hover:scale-105 transition-transform">
-              Join Our Community
-            </span>
-            <motion.span
-              className="ml-2 inline-block"
-              animate={{ x: [0, 4, 0] }}
-              transition={{
-                repeat: Infinity,
-                repeatType: "reverse",
-                duration: 2,
-                delay: 1,
-              }}
-            >
-              →
-            </motion.span>
-          </Link>
-        </motion.div> */}
-
         {/* Floating decoration */}
         <motion.div
           className="absolute bottom-20 left-20 hidden lg:block"
-          animate={isMobile ? {} :{
-            y: [0, -20, 0],
-          }}
+          animate={
+            isMobile
+              ? {}
+              : {
+                  y: [0, -20, 0],
+                }
+          }
           transition={{
             duration: 8,
             repeat: Infinity,
@@ -1023,10 +927,14 @@ const Home = () => {
           {/* Floating gradient blobs */}
           <motion.div
             className="absolute top-1/3 left-1/4 w-64 h-64 rounded-full bg-teal-400/10 blur-3xl"
-            animate={isMobile ? {} :{
-              scale: [1, 1.2, 1],
-              opacity: [0.8, 1, 0.8],
-            }}
+            animate={
+              isMobile
+                ? {}
+                : {
+                    scale: [1, 1.2, 1],
+                    opacity: [0.8, 1, 0.8],
+                  }
+            }
             transition={{
               duration: 15,
               repeat: Infinity,
@@ -1035,10 +943,14 @@ const Home = () => {
           />
           <motion.div
             className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-blue-400/10 blur-3xl"
-            animate={isMobile ? {} :{
-              x: [0, 30, 0],
-              y: [0, 20, 0],
-            }}
+            animate={
+              isMobile
+                ? {}
+                : {
+                    x: [0, 30, 0],
+                    y: [0, 20, 0],
+                  }
+            }
             transition={{
               duration: 20,
               repeat: Infinity,
@@ -1051,14 +963,14 @@ const Home = () => {
         {/* Content */}
         <motion.div
           className="relative z-10 max-w-2xl mx-auto text-center backdrop-blur-sm bg-white/70 rounded-3xl border border-white/30 shadow-xl p-12"
-          initial={isMobile ? {} :{ opacity: 0, y: 50 }}
+          initial={isMobile ? {} : { opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
           <motion.h2
             className="text-4xl font-bold text-gray-900 mb-4"
-            initial={isMobile ? {} :{ opacity: 0 }}
+            initial={isMobile ? {} : { opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
           >
@@ -1070,7 +982,7 @@ const Home = () => {
 
           <motion.p
             className="text-xl text-gray-700 mb-8"
-            initial={isMobile ? {} :{ opacity: 0 }}
+            initial={isMobile ? {} : { opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
           >
@@ -1080,7 +992,7 @@ const Home = () => {
 
           <motion.form
             className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
-            initial={isMobile ? {} :{ opacity: 0 }}
+            initial={isMobile ? {} : { opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
           >
@@ -1093,7 +1005,7 @@ const Home = () => {
               />
               <motion.div
                 className="absolute inset-0 rounded-xl border-2 border-transparent border-t-teal-400/30 border-r-blue-400/30 pointer-events-none"
-                animate={isMobile ? {} :{ rotate: 360 }}
+                animate={isMobile ? {} : { rotate: 360 }}
                 transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
               />
             </div>
@@ -1114,7 +1026,7 @@ const Home = () => {
 
           <motion.p
             className="text-sm text-gray-500 mt-6"
-            initial={isMobile ? {} :{ opacity: 0 }}
+            initial={isMobile ? {} : { opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
           >
@@ -1142,11 +1054,15 @@ const Home = () => {
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
               }}
-              animate={isMobile ? {} :{
-                y: [0, (Math.random() - 0.5) * 100],
-                x: [0, (Math.random() - 0.5) * 50],
-                opacity: [0.8, 1, 0.8],
-              }}
+              animate={
+                isMobile
+                  ? {}
+                  : {
+                      y: [0, (Math.random() - 0.5) * 100],
+                      x: [0, (Math.random() - 0.5) * 50],
+                      opacity: [0.8, 1, 0.8],
+                    }
+              }
               transition={{
                 duration: Math.random() * 10 + 10,
                 repeat: Infinity,
@@ -1161,7 +1077,7 @@ const Home = () => {
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <motion.h2
             className="text-5xl sm:text-6xl font-bold text-gray-900 mb-8"
-            initial={isMobile ? {} :{ opacity: 0, y: 30 }}
+            initial={isMobile ? {} : { opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
@@ -1170,7 +1086,7 @@ const Home = () => {
               Mind Matters
             </span>{" "}
             <motion.span
-              animate={isMobile ? {} :{ rotate: [0, 15, -15, 0] }}
+              animate={isMobile ? {} : { rotate: [0, 15, -15, 0] }}
               transition={{
                 repeat: Infinity,
                 repeatType: "reverse",
@@ -1183,7 +1099,7 @@ const Home = () => {
 
           <motion.p
             className="text-xl md:text-2xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed"
-            initial={isMobile ? {} :{ opacity: 0, y: 20 }}
+            initial={isMobile ? {} : { opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
